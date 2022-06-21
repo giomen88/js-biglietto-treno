@@ -6,29 +6,19 @@
 // - PREZZO STAMPATO IN PAGINA CON MASSIMO DUE DECIMALI (CENTESIMI)
 
 const distance = parseInt(prompt('Quanti km devi percorrere?'));
-console.log(distance)
 
 const age = parseInt(prompt('Quanti anni hai?'));
-console.log(age)
 
 const price = distance * 0.21;
-console.log(price)
-
-smallDiscount = (price - (price * 20 / 100).toFixed(2));
-console.log(smallDiscount)
-
-bigDiscount = (price - (price * 40 / 100).toFixed(2));
-console.log(bigDiscount)
 
 priceParagraph = document.getElementById('price-paragraph')
 
-
 if (age < 18) {
-    priceParagraph.innerHTML = `Ricevi uno sconto del <strong>20%</strong>! Il costo del tuo biglietto è di €<strong>${smallDiscount}</strong>`;
+    priceParagraph.innerHTML = `Ricevi uno sconto del <strong>20%</strong>! Il costo del tuo biglietto è di €<strong>${(price - (price * 20 / 100).toFixed(2))}</strong>`;
 }
 
 else if (age > 65) {
-    priceParagraph.innerHTML = `Ricevi uno sconto del <strong>40%</strong>! Il costo del tuo biglietto è di €<strong>${bigDiscount}</strong>`;
+    priceParagraph.innerHTML = `Ricevi uno sconto del <strong>40%</strong>! Il costo del tuo biglietto è di €<strong>${(price - (price * 40 / 100).toFixed(2))}</strong>`;
 }
 
 else {
