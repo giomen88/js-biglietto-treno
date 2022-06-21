@@ -16,16 +16,25 @@ console.log(price)
 
 priceParagraph = document.getElementById('price-paragraph')
 
-if (age < 18) {
-    price = (price - price * 20 / 100).toFixed(2)
-    priceParagraph.innerHTML = `Ricevi uno sconto del <strong>20%</strong>! Il costo del tuo biglietto è di €<strong>${price}</strong>`;
-}
+// VALIDAZIONE
 
-else if (age > 65) {
-    price = (price - price * 20 / 100).toFixed(2)
-    priceParagraph.innerHTML = `Ricevi uno sconto del < strong > 40 %</strong > !Il costo del tuo biglietto è di €<strong>${price}</strong>`;
+if (isNaN(distance) || isNaN(age)) {
+    alert('Devi inserire un numero!')
 }
 
 else {
-    priceParagraph.innerHTML = `Il costo del tuo biglietto è di €<strong>${price}</strong>`;
+
+    if (age < 18) {
+        price = (price - price * 20 / 100).toFixed(2)
+        priceParagraph.innerHTML = `Ricevi uno sconto del <strong>20%</strong>! Il costo del tuo biglietto è di €<strong>${price}</strong>`;
+    }
+
+    else if (age > 65) {
+        price = (price - price * 20 / 100).toFixed(2)
+        priceParagraph.innerHTML = `Ricevi uno sconto del <strong>40%</strong>! Il costo del tuo biglietto è di €<strong>${price}</strong>`;
+    }
+
+    else {
+        priceParagraph.innerHTML = `Il costo del tuo biglietto è di €<strong>${price}</strong>`;
+    }
 }
